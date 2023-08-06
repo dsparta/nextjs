@@ -1,63 +1,35 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+# Next.js Blog Application
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+This repository contains a Next.js application that serves as a blog site. The application is built using Next.js, a popular framework for building server-side rendered React applications. It has been deployed to AWS Amplify using Terraform for infrastructure provisioning and Amplify's inbuilt CI/CD functionality for continuous deployment.
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using Markdown files as the data source.
+## Deployment URL
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+The application has been deployed to AWS Amplify and can be accessed at the following URL:
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+https://master.d3ozw4k1c3273c.amplifyapp.com/
 
-## Demo
+## Deployment Process
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+The deployment of this Next.js application to AWS Amplify was done using Terraform for infrastructure provisioning and AWS Amplify's inbuilt CI/CD functionality.
 
-## Deploy your own
+Here are the main steps involved in the deployment process:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/blog-starter)
+1. open aws account create a role, or use any assigned role.
+clone this repo.
+2. push to your repository
+go to aws amplify, authorize git for specific repo.
+click on "new app"> "Host web app" > chose github link > select repository > select branch > define App Name. > done.
+3. tried with Terraform to invoke without doing manually. but, couldn't succeed. It always shows the error "resource block not expected." if you have any suggestions please create a branch and update . "[main.tf](http://main.tf/)" file.
+4. CI/CD Setup with AWS Amplify:
+    - The Amplify app was connected to the GitHub repository for continuous deployment.
+    - Amplify automatically builds and deploys the application whenever changes are pushed to the specified branch (e.g., master).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
+## Technologies Used
 
-### Related examples
+- [Next.js](https://nextjs.org/) - A React framework for building server-side rendered applications.
+- [AWS Amplify](https://aws.amazon.com/amplify/) - A fully managed service for continuous deployment and hosting of web applications.
+- [Terraform](https://www.terraform.io/) - An infrastructure as code tool used for provisioning AWS resources.
 
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [Sanity](/examples/cms-sanity)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-- [Umbraco Heartcore](/examples/cms-umbraco-heartcore)
-- [Builder.io](/examples/cms-builder-io)
-- [TinaCMS](/examples/cms-tina/)
-- [Enterspeed](/examples/cms-enterspeed)
+## Authors
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example blog-starter blog-starter-app
-```
-
-```bash
-yarn create next-app --example blog-starter blog-starter-app
-```
-
-```bash
-pnpm create next-app --example blog-starter blog-starter-app
-```
-
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-# Notes
-
-`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+- soumya mallick
